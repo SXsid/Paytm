@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = require("zod");
 
-mongoose.connect("mongodb+srv://sid:amanjha09@cluster0.i1unc7g.mongodb.net/Paytm");
+mongoose.connect("");//add you bd intance
 
 const userSchema = new mongoose.Schema({
     userName: {
