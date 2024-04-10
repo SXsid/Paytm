@@ -10,7 +10,7 @@
 
 ```bash
 git clone
-#connect to your own mongobd in /paytm/backend/index.js
+#connect to your own mongobd in /paytm/backend/db.js
 ```
 
 ## start Backend
