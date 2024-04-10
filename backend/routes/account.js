@@ -4,18 +4,23 @@ const authMiddleware = require('./middelware');
 const { default: mongoose } = require('mongoose');
 const { setErrorMap } = require('zod');
 const router = express.Router()
+const zod = require('zod')
 
 
-router.get('/balance',authMiddleware,async (req,res)=>{
-    const userId = req.userId
-    const account = await Account.findOne({ userId:userId})
+
+router.get("/balance", authMiddleware, async (req, res) => {
+    console.log(req.userId);
+    const account = await Account.findOne({
+        userId: req.userId
+    });
+
     res.json({
         balance:account.balance
     })
-})
+});
 
 router.post('/transfer',authMiddleware,async(req,res)=>{
-
+    
     const session = await mongoose.startSession()
     session.startTransaction()
 
