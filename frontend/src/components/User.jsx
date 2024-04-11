@@ -3,14 +3,31 @@ import Input from "./Input";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
+function useDebounce (input){
+  const [debounce,setDebounce]= useState(input)
+  useEffect(()=>{
+    let id =setTimeout(()=>{
+        setDebounce(input)
+    },500)
+    return ()=>{
+      clearTimeout(id)
+    }
+  },[input])
+
+  return debounce;
+}
+
 export default function User(){
     const [users,setUsers]= useState([])
     const [input,setInput] = useState("")
+    const debounce = useDebounce(input)
+    
     useEffect( ()=>{
        async function user(){
-        let res= await axios.get("http://localhost:3000/api/v1/user/bulk?filter="+input,{
+        let res= await axios.get("http://localhost:3000/api/v1/user/bulk?filter="+debounce,{
             headers:{
-                Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjEzZDdiYmRmYmMyZTUwZWI5NjUzY2IiLCJpYXQiOjE3MTI1Nzk0MTh9.Iv6-JCmpo1UiS0srYmzBK2zNfXNnCvVgfPx6kCAxqBw"
+                Authorization:"Bearer "+localStorage.getItem('token')
+
             }
         })
         setUsers(()=>[...res.data.users])
@@ -18,7 +35,7 @@ export default function User(){
        user()
 
 
-    },[input])
+    },[debounce])
     return(
         <div className="mt-5 mx-12 px-4">
             <Input onChange={e=>setInput(e.target.value)}title={"Users"} placeH={"Search users"}/>
