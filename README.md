@@ -32,4 +32,5 @@ npm run dev
 ```
 Try it out on you localhost:3000 port 
 
-![Dashboard](./images/Screenshot(101).png)
+![Dashboard](./images/Screenshot101.png)
+
