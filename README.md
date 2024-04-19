@@ -32,4 +32,4 @@ npm run dev
 ```
 Try it out on you localhost:3000 port 
 
-![Dashboard]("https://github.com/10x-sid/Paytm/blob/main/images/Screenshot%20(101).png")
+![Dashboard](./images/Screenshot(101).png)
