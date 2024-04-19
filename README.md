@@ -32,5 +32,21 @@ npm run dev
 ```
 Try it out on you localhost:3000 port 
 
-![Dashboard](./images/Screenshot101.png)
+![signUP](https://github.com/10x-sid/Paytm/blob/main/images/Screenshot%20(99).png?raw=true
+)
+
+
+![signUP](https://github.com/10x-sid/Paytm/blob/main/images/Screenshot%20(98).png?raw=true
+)
+
+
+
+
+![Dashboard](https://github.com/10x-sid/Paytm/blob/main/images/Screenshot%20(101).png?raw=true)
+
+
+
+![signUP](https://github.com/10x-sid/Paytm/blob/main/images/Screenshot%20(102).png?raw=true
+)
+
 
