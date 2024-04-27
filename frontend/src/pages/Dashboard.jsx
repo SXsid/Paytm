@@ -15,7 +15,7 @@ export default function Dashboard(){
             let value = await res.data.balance
             setValue(value)
         })
-    },[value])
+    },[])
     return(
         <div >
             <Appbar/>
